@@ -19,6 +19,16 @@ There is an example app here - [https://github.com/trisberg/springone-2015/tree/
 
 You can download it from here built as a jar - [https://github.com/trisberg/springone-2015/raw/master/batch-spark/app/spark-hashtags_2.10-0.1.0.jar](https://github.com/trisberg/springone-2015/raw/master/batch-spark/app/spark-hashtags_2.10-0.1.0.jar)
 
+This example reads a file containing tweets. You can find sample data here - [https://github.com/trisberg/springone-2015/blob/master/batch-spark/data/](https://github.com/trisberg/springone-2015/blob/master/batch-spark/data/)
+
+You can download this file and copy it to HDFS using:
+
+    wget https://github.com/trisberg/springone-2015/raw/master/batch-spark/data/tweets.dat
+    hadoop fs -mkdir /tmp/spark-in
+    hadoop fs -chmod 777 /tmp/spark-in
+    hadoop fs -copyFromLocal tweets.dat /tmp/spark-in/tweets.dat
+    hadoop fs -chmod 777 /tmp/spark-in/tweets.dat
+
 ### Run local with:
 
     java -jar target/spark-task-0.0.1-SNAPSHOT.jar [--properties...] [args...]
